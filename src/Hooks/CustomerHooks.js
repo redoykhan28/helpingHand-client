@@ -7,7 +7,7 @@ const useCustomer = email => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/user/customer/${email}`)
+        fetch(`https://helpinghand-server.vercel.app/user/customer/${email}`)
             .then(res => res.json())
             .then(data => {
 

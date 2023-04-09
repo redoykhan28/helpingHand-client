@@ -8,7 +8,7 @@ const TotalUsers = () => {
     const { data: allUsers, isLoading, refetch } = useQuery({
 
         queryKey: ['allUsers'],
-        queryFn: () => fetch('http://localhost:5000/allusers', {
+        queryFn: () => fetch('https://helpinghand-server.vercel.app/allusers', {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
@@ -22,7 +22,7 @@ const TotalUsers = () => {
 
     //handle Admin
     const handleAdmin = (user) => {
-        fetch(`http://localhost:5000/admin/${user._id}`, {
+        fetch(`https://helpinghand-server.vercel.app/admin/${user._id}`, {
 
             method: "PUT",
             headers: {

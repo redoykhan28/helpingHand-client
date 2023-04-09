@@ -6,7 +6,7 @@ const TotalOrdersCard = ({ order }) => {
 
     //update to accept
     const handleAccept = (order) => {
-        fetch(`http://localhost:5000/acceptStatus/${order._id}`, {
+        fetch(`https://helpinghand-server.vercel.app/acceptStatus/${order._id}`, {
             method: "PUT",
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
@@ -24,7 +24,7 @@ const TotalOrdersCard = ({ order }) => {
 
     //update to canceled
     const handleCancled = (order) => {
-        fetch(`http://localhost:5000/cancelStatus/${order._id}`, {
+        fetch(`https://helpinghand-server.vercel.app/cancelStatus/${order._id}`, {
             method: "PUT",
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`

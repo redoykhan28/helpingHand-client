@@ -6,7 +6,7 @@ const CancelModal = ({ deleteOrder, setDeleteOrder, message, refetch }) => {
     //handle Delete
     const handleDelete = (cancelOrder) => {
 
-        fetch(`http://localhost:5000/cancelOrders/${cancelOrder?._id}`, {
+        fetch(`https://helpinghand-server.vercel.app/cancelOrders/${cancelOrder?._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`

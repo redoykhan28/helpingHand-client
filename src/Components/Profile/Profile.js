@@ -18,7 +18,7 @@ const Profile = () => {
     const { data: myOrders = [], refetch, isLoading } = useQuery({
 
         queryKey: ['myOrders'],
-        queryFn: () => fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+        queryFn: () => fetch(`https://helpinghand-server.vercel.app/orders?email=${user?.email}`, {
 
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
@@ -33,7 +33,7 @@ const Profile = () => {
     const { data: profile = [] } = useQuery({
 
         queryKey: ['profile'],
-        queryFn: () => fetch(`http://localhost:5000/userProfile?email=${user?.email}`, {
+        queryFn: () => fetch(`https://helpinghand-server.vercel.app/userProfile?email=${user?.email}`, {
 
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`

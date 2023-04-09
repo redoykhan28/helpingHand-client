@@ -13,7 +13,7 @@ const TotalOrder = () => {
     const { data: totalOrders = [], refetch, isLoading } = useQuery({
 
         queryKey: ['totalOrders'],
-        queryFn: () => fetch('http://localhost:5000/allorders', {
+        queryFn: () => fetch('https://helpinghand-server.vercel.app/allorders', {
 
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
