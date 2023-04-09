@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = () => {
     return (
         <div data-aos="fade-down">
-            <div className='p-10 rounded-lg bg-[#F9F9FF] w-3/4 mx-auto border'>
+            <div className='p-10 rounded-lg bg-[#F9F9FF] lg:w-3/4 mx-auto border'>
 
                 <h1 className='text-md text-center mb-2 text-[#ED7D2B] font-bold'>Contact Us</h1>
                 <h1 className='text-2xl text-center mb-8'>Stay connected with us</h1>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { toast } from 'react-hot-toast';
-import { FaTrash } from 'react-icons/fa';
 
 const TotalOrdersCard = ({ order }) => {
     const { email, phoneNumber, address, orders, payment, status } = order
@@ -41,12 +40,11 @@ const TotalOrdersCard = ({ order }) => {
             })
     }
     return (
-        <div data-aos='fade-up'>
+        <div >
             <div className="card w-11/12 mx-auto my-10 bg-base-100 shadow-xl rounded-none rounded-br-full">
                 <div className="card-body  text-start ">
                     <div className='flex justify-between items-center'>
                         <h2 className="card-title">{email}</h2>
-                        <h2 className="text-xl mr-10 text-red-600 hover:text-red-800 cursor-pointer"><FaTrash /></h2>
                     </div>
                     <p>- {orders}</p>
                     <div>

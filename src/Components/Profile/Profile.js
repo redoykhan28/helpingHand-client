@@ -1,14 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { authProvider } from '../../Context/AuthContext';
 import { useQuery } from 'react-query';
 import Loader from '../Loader/Loader';
 import empty from '../../Assets/empty/3298067.jpg'
 import OrderCard from './OrderCard';
+import CancelModal from './CancelModal';
 
 const Profile = () => {
 
     //use context
     const { user } = useContext(authProvider)
+
+    //deleting order
+    const [deleteOrder, setDeleteOrder] = useState(null)
 
     //use query to load data
     const { data: myOrders = [], refetch, isLoading } = useQuery({
@@ -75,7 +79,7 @@ const Profile = () => {
                                 :
                                 <div>
                                     {
-                                        myOrders?.map(order => <OrderCard key={order?._id} order={order}></OrderCard>)
+                                        myOrders?.map(order => <OrderCard key={order?._id} setDeleteOrder={setDeleteOrder} refetch={refetch} order={order}></OrderCard>)
                                     }
                                 </div>
                         }
@@ -83,6 +87,11 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
+            {
+                deleteOrder &&
+                <CancelModal refetch={refetch} deleteOrder={deleteOrder} setDeleteOrder={setDeleteOrder} message={'Are you sure you wants to Delete?'}></CancelModal>
+
+            }
         </div>
     );
 };

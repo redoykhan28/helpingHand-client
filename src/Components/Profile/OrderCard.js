@@ -2,7 +2,11 @@ import React from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const OrderCard = ({ order }) => {
+
+const OrderCard = ({ order, setDeleteOrder }) => {
+
+
+
     const { _id, email, phoneNumber, address, orders, payment, status } = order
     return (
         <div>
@@ -10,7 +14,7 @@ const OrderCard = ({ order }) => {
                 <div className="card-body  text-start ">
                     <div className='flex justify-between items-center'>
                         <h2 className="card-title">{email}</h2>
-                        <h2 className="text-xl mr-10 text-red-600 hover:text-red-800 cursor-pointer"><FaTrash /></h2>
+                        <label onClick={() => setDeleteOrder(order)} className="text-xl mr-10 text-red-600 hover:text-red-800 cursor-pointer" htmlFor="my-modal"><FaTrash /></label>
                     </div>
                     <p>- {orders}</p>
                     <div>
@@ -33,7 +37,7 @@ const OrderCard = ({ order }) => {
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
