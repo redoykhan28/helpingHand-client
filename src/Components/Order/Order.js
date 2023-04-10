@@ -29,7 +29,7 @@ const Order = () => {
 
         }
 
-        fetch('https://helpinghand-server.vercel.app/orders', {
+        fetch('http://localhost:5000/orders', {
 
             method: "POST",
             headers: {

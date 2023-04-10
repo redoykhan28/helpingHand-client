@@ -56,7 +56,7 @@ export const route = createBrowserRouter([
             {
                 path: '/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`https://helpinghand-server.vercel.app/order/${params?.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/order/${params?.id}`)
             },
         ]
 

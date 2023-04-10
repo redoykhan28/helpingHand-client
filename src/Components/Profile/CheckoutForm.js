@@ -14,7 +14,7 @@ const CheckoutForm = ({ orderInfo }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://helpinghand-server.vercel.app/create-payment-intent", {
+        fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const CheckoutForm = ({ orderInfo }) => {
                 orderId: _id
             }
 
-            fetch('https://helpinghand-server.vercel.app/payment', {
+            fetch('http://localhost:5000/payment', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
