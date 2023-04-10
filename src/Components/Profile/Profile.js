@@ -44,6 +44,7 @@ const Profile = () => {
 
     })
 
+
     if (isLoading) {
 
         return <Loader></Loader>

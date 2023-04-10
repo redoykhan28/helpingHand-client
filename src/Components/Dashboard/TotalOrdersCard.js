@@ -4,6 +4,7 @@ import { toast } from 'react-hot-toast';
 const TotalOrdersCard = ({ order }) => {
     const { email, phoneNumber, address, orders, payment, status } = order
 
+
     //update to accept
     const handleAccept = (order) => {
         fetch(`http://localhost:5000/acceptStatus/${order._id}`, {

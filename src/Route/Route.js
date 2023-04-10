@@ -63,7 +63,7 @@ export const route = createBrowserRouter([
     },
     {
         path: '/',
-        element: <AdminRoute> <DashLayout></DashLayout></AdminRoute>,
+        element: <PrivetRoute> <DashLayout></DashLayout></PrivetRoute>,
         children: [
             {
                 path: '/dashhome',

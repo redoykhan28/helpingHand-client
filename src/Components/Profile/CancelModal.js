@@ -24,7 +24,7 @@ const CancelModal = ({ deleteOrder, setDeleteOrder, message, refetch }) => {
                     console.log(data)
                     refetch()
                     toast.success('order Cancelled')
-                    setDeleteOrder(null)
+                    // setDeleteOrder(null)
 
                 }
             })
